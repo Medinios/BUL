@@ -1,0 +1,56 @@
+<div class="register">
+  <div class="register-main">
+    <div class="logo">BUL</div>
+    <div class="description">
+      Create your dream team - start from the hood and get to the best BUL
+      League
+    </div>
+    <form [formGroup]="registerForm" class="form">
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="text"
+          formControlName="username"
+          pInputText
+        />
+        <label for="float-input">Username</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="text"
+          formControlName="password"
+          pInputText
+        />
+        <label for="float-input">Password</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="email"
+          formControlName="email"
+          pInputText
+        />
+        <label for="float-input">Email</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="text"
+          formControlName="team_name"
+          pInputText
+        />
+        <label for="float-input">Team Name</label>
+      </span>
+      <button
+        pButton
+        type="button"
+        label="Register"
+        (click)="onSubmit()"
+      ></button>
+    </form>
+    <div class="account">
+      <a routerLink="/login">Do you have an account already?</a>
+    </div>
+  </div>
+</div>

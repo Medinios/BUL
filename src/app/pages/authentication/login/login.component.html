@@ -1,0 +1,30 @@
+<div class="login">
+  <div class="login-main">
+    <div class="logo">BUL</div>
+    <div class="description">Your team is looking for you.</div>
+    <form [formGroup]="loginForm" class="form">
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="text"
+          formControlName="username"
+          pInputText
+        />
+        <label for="float-input">Username</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="text"
+          formControlName="password"
+          pInputText
+        />
+        <label for="float-input">Password</label>
+      </span>
+      <button pButton type="button" label="Login" (click)="onSubmit()"></button>
+    </form>
+    <div class="account">
+      <a routerLink="/register">You don't have an account? create one.</a>
+    </div>
+  </div>
+</div>

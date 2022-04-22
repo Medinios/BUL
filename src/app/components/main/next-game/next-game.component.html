@@ -1,0 +1,23 @@
+<div class="next-game">
+  <div class="details">
+    <h1>Next Game</h1>
+    <div class="time">{{ upNext.date }}</div>
+    <div class="vs">
+      <h1>VS</h1>
+    </div>
+    <div class="teams">
+      <div class="team">
+        <div class="image">
+          <img src="{{ upNext.team_a.logo }}" />
+        </div>
+        <div class="name">{{ upNext.team_a.team_name }}</div>
+      </div>
+      <div class="team">
+        <div class="image">
+          <img src="{{ upNext.team_b.logo }}" />
+        </div>
+        <div class="name">{{ upNext.team_b.team_name }}</div>
+      </div>
+    </div>
+  </div>
+</div>
