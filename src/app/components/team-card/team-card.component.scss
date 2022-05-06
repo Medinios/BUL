@@ -1,0 +1,21 @@
+.team-card {
+  display: flex;
+  background: linear-gradient(#6a1b9a8c, #8e24aa7d);
+  gap: 2vh;
+  margin-bottom: 2px;
+  .image {
+    align-self: center;
+    img {
+      width: 50px;
+    }
+  }
+  .data {
+    color: white;
+    align-self: center;
+  }
+  .burger {
+    img {
+      width: 25px;
+    }
+  }
+}

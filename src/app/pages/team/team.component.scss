@@ -1,0 +1,54 @@
+.team {
+  background: linear-gradient(#000c, #000), url(/assets/images/mainBg.jpg);
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  &-content {
+    max-width: 1006px;
+    margin: 0 auto;
+  }
+  .team-order {
+    display: flex;
+    gap: 10vh;
+  }
+  .top-cards {
+    width: 50%;
+    height: 80vh;
+    overflow: auto;
+    h1 {
+      margin: unset;
+      color: white;
+    }
+    p {
+      margin: unset;
+      color: var(--primary-link);
+      cursor: pointer;
+    }
+  }
+  .court-main {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    .court-bg {
+      background-image: url("https://media.istockphoto.com/photos/top-view-of-basketball-court-3d-render-picture-id958508156?k=20&m=958508156&s=612x612&w=0&h=W657xWL-dva6Kxj9C0e4pJ_BKjQubZQyoHeoowMWUNk=");
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      pointer-events: none;
+      min-height: 100vh;
+      position: absolute;
+      top: 0;
+    }
+    .court {
+      display: flex;
+      gap: 0.4vh;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: absolute;
+      /* width: 6%; */
+      /* height: 100vh; */
+      top: 0;
+      padding: 10vh;
+    }
+  }
+}

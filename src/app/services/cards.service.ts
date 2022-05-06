@@ -12,4 +12,10 @@ export class CardsService {
   get_all_cards(): Observable<any> {
     return this.httpClient.get(`${environment.base_url}cards/get`);
   }
+
+  get_all_packs(): Observable<any> {
+    return this.httpClient.get(
+      `${environment.base_url}cards/get_all_card_packs`
+    );
+  }
 }

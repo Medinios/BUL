@@ -1,0 +1,22 @@
+<div class="cards">
+  <div class="cards-content">
+    <app-header></app-header>
+    <div class="cards-content-list">
+      <h1>Buy new PACKS</h1>
+      <small
+        >Here you can manage your friends , ask for a game , send
+        messages</small
+      >
+    </div>
+    <div class="friends-content-list-friend" *ngFor="let pack of packs">
+      <div class="data">
+        <img src="{{ pack.pack_image }}" width="300" />
+        <div class="user">{{ pack.pack_name }}</div>
+        <div class="price">{{ pack.price }}</div>
+      </div>
+      <div class="options">
+        <p-button label="Buy Now"></p-button>
+      </div>
+    </div>
+  </div>
+</div>

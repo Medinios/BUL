@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { DragDropModule } from 'primeng/dragdrop';
 
 import { MainComponent } from './pages/main/main.component';
 import { NextGameComponent } from './components/main/next-game/next-game.component';
@@ -20,6 +21,12 @@ import { CardComponent } from './components/card/card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FriendsComponent } from './components/main/friends/friends.component';
 import { CardRectComponent } from './components/card-rect/card-rect.component';
+import { TeamComponent } from './pages/team/team.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TeamCardComponent } from './components/team-card/team-card.component';
+import { BuyComponent } from './components/buy/buy.component';
+import { FriendsListComponent } from './pages/friends/friends.component';
+import { CardsComponent } from './pages/cards/cards.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +38,12 @@ import { CardRectComponent } from './components/card-rect/card-rect.component';
     CardComponent,
     FriendsComponent,
     CardRectComponent,
+    TeamComponent,
+    HeaderComponent,
+    TeamCardComponent,
+    BuyComponent,
+    FriendsListComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +55,7 @@ import { CardRectComponent } from './components/card-rect/card-rect.component';
     InputTextModule,
     DialogModule,
     ReactiveFormsModule,
+    DragDropModule,
   ],
   providers: [
     {

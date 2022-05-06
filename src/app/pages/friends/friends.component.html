@@ -1,0 +1,29 @@
+<div class="friends">
+  <div class="friends-content">
+    <app-header></app-header>
+    <div class="friends-content-list">
+      <h1>Your Friends</h1>
+      <small
+        >Here you can manage your friends , ask for a game , send
+        messages</small
+      >
+      <div
+        class="friends-content-list-friend"
+        *ngFor="let friend of friendList"
+      >
+        <div class="data">
+          <img src="{{ friend.team_b.logo }}" width="25" />
+          <div class="user">{{ friend.team_b.team_name }}</div>
+        </div>
+        <div class="options">
+          <img
+            src="assets/images/remove.png"
+            (click)="removeFriend(friend.team_b.user_id)"
+          />
+          <img src="assets/images/msg.png" />
+          <img src="assets/images/basketball.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

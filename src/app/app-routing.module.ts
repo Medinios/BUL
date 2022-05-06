@@ -2,11 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/authentication/login/login.component';
 import { RegisterComponent } from './pages/authentication/register/register.component';
+import { CardsComponent } from './pages/cards/cards.component';
+import { FriendsListComponent } from './pages/friends/friends.component';
 import { MainComponent } from './pages/main/main.component';
+import { TeamComponent } from './pages/team/team.component';
 const routes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full' },
   { path: 'register', component: RegisterComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: 'team', component: TeamComponent, pathMatch: 'full' },
+  { path: 'friends', component: FriendsListComponent, pathMatch: 'full' },
+  { path: 'cards', component: CardsComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

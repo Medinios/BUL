@@ -1,5 +1,8 @@
 <div class="friends-main-component">
-  <div class="title">Friends</div>
+  <div class="title">
+    Friends
+    <a href="friends">more..</a>
+  </div>
   <div class="friend" *ngFor="let friend of friendList">
     <img src="{{ friend.team_b.logo }}" width="25" />
     <div class="user">{{ friend.team_b.team_name }}</div>

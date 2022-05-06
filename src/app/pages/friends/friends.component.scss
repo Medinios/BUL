@@ -1,0 +1,51 @@
+.friends {
+  background: linear-gradient(#000c, #000), url("/assets/images/friendsBg.png");
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  margin: unset;
+  &-content {
+    max-width: 1006px;
+    margin: 0 auto;
+    &-list {
+      h1 {
+        margin: unset;
+        color: white;
+        margin: unset;
+      }
+      small {
+        color: white;
+        margin-bottom: 2vh;
+      }
+      &-friend {
+        margin-top: 2vh;
+        padding: 1vh;
+        background: #517293bd;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: self-start;
+        gap: 1vh;
+        .data {
+          display: flex;
+          gap: 1vh;
+          .user {
+            align-self: self-end;
+          }
+        }
+        .options {
+          align-items: center;
+          display: flex;
+          gap: 0.5vh;
+          img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

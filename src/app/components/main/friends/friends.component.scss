@@ -9,6 +9,15 @@
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: var(--primary-link);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 100;
+      align-self: center;
+    }
   }
   .friend {
     padding: 1vh;

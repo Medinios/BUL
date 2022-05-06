@@ -1,0 +1,31 @@
+<div class="team">
+  <div class="team-content">
+    <app-header></app-header>
+    <div class="team-order">
+      <div class="top-cards">
+        <h1>Your Cards:</h1>
+        <p (click)="clear()">Clear court</p>
+        <div
+          class="card"
+          pDroppable="team"
+          *ngFor="let card of availableProducts"
+        >
+          <app-team-card
+            [card]="card"
+            pDraggable="topFive"
+            (onDragStart)="dragStart(card)"
+            (onDragEnd)="dragEnd()"
+          ></app-team-card>
+        </div>
+      </div>
+      <div class="court-main">
+        <div class="court-bg"></div>
+        <div class="court" pDroppable="topFive" (onDrop)="drop()">
+          <div class="card" *ngFor="let card of selectedProducts">
+            <app-card-rect [card]="card"></app-card-rect>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

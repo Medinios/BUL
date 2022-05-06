@@ -14,4 +14,13 @@ export class FriendsService {
       `${environment.base_url}friends/get_all_friends_by_user_team/${team_id}`
     );
   }
+
+  remove_friend_by_team_id(teamId: number): Observable<any> {
+    return this.httpClient.post(
+      `${environment.base_url}friends/remove_friend_by_team_id/`,
+      {
+        userId: teamId,
+      }
+    );
+  }
 }
