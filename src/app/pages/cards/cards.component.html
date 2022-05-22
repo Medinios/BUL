@@ -8,15 +8,27 @@
         messages</small
       >
     </div>
-    <div class="friends-content-list-friend" *ngFor="let pack of packs">
+    <div class="cards-content-list-card" *ngFor="let pack of packs">
       <div class="data">
         <img src="{{ pack.pack_image }}" width="300" />
-        <div class="user">{{ pack.pack_name }}</div>
+        <div class="name">{{ pack.pack_name }}</div>
         <div class="price">{{ pack.price }}</div>
       </div>
       <div class="options">
-        <p-button label="Buy Now"></p-button>
+        <p-button label="Buy Now" (click)="buyCardPack(pack.id)"></p-button>
       </div>
     </div>
   </div>
 </div>
+<p-dialog
+  [(visible)]="display"
+  [style]="{ width: '75vw' }"
+  [baseZIndex]="10000"
+>
+  <h1>Your new cards:</h1>
+  <div class="whatIGotCards">
+    <p class="whatIGot" *ngFor="let card of gotCards">
+      <app-card-rect [card]="card"></app-card-rect>
+    </p>
+  </div>
+</p-dialog>

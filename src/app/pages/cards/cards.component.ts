@@ -8,6 +8,8 @@ import { CardsService } from 'src/app/services/cards.service';
 })
 export class CardsComponent implements OnInit {
   packs: any[];
+  gotCards: any[];
+  display: boolean = false;
   constructor(private cardsService: CardsService) {}
 
   ngOnInit(): void {
@@ -20,5 +22,12 @@ export class CardsComponent implements OnInit {
     });
   }
 
-  buyCardPack(packId: number) {}
+  buyCardPack(packId: number) {
+    this.cardsService.buy_card_pack(packId).subscribe((res) => {
+      this.gotCards = res;
+      this.display = true;
+    });
+
+    console.log(packId);
+  }
 }

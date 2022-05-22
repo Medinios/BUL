@@ -11,6 +11,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DragDropModule } from 'primeng/dragdrop';
+import { TabViewModule } from 'primeng/tabview';
+import { AccordionModule } from 'primeng/accordion';
 
 import { MainComponent } from './pages/main/main.component';
 import { NextGameComponent } from './components/main/next-game/next-game.component';
@@ -27,6 +29,14 @@ import { TeamCardComponent } from './components/team-card/team-card.component';
 import { BuyComponent } from './components/buy/buy.component';
 import { FriendsListComponent } from './pages/friends/friends.component';
 import { CardsComponent } from './pages/cards/cards.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MessagesComponent } from './pages/chat/messages/messages.component';
+import { MessageComponent } from './pages/chat/messages/message/message.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { GameComponent } from './pages/game/game.component';
+import { LogsComponent } from './components/game/logs/logs.component';
+import { PointsComponent } from './components/game/points/points.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +54,13 @@ import { CardsComponent } from './pages/cards/cards.component';
     BuyComponent,
     FriendsListComponent,
     CardsComponent,
+    ChatComponent,
+    MessagesComponent,
+    MessageComponent,
+    ProfileComponent,
+    GameComponent,
+    LogsComponent,
+    PointsComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +73,9 @@ import { CardsComponent } from './pages/cards/cards.component';
     DialogModule,
     ReactiveFormsModule,
     DragDropModule,
+    InputTextareaModule,
+    TabViewModule,
+    AccordionModule,
   ],
   providers: [
     {

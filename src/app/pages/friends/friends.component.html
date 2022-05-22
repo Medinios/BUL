@@ -20,10 +20,21 @@
             src="assets/images/remove.png"
             (click)="removeFriend(friend.team_b.user_id)"
           />
-          <img src="assets/images/msg.png" />
+          <img
+            src="assets/images/msg.png"
+            (click)="
+              openChatWithFriend(friend.team_b.team_id, friend.team_b.team_name)
+            "
+          />
           <img src="assets/images/basketball.png" />
         </div>
       </div>
+      <app-chat
+        [display]="displayOpenChat"
+        [teamChatId]="teamChatId"
+        [teamName]="teamName"
+        (closedDialog)="closeDialog()"
+      ></app-chat>
     </div>
   </div>
 </div>

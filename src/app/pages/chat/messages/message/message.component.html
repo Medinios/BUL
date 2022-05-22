@@ -1,0 +1,31 @@
+<div *ngIf="from">
+  <p>From:</p>
+  {{ message.message }}
+
+  <div class="options">Answer</div>
+</div>
+<div *ngIf="!from">
+  <div>
+    <div class="viewed">
+      <div class="view" *ngIf="message.viewed; else notViewd">
+        <img src="assets/images/viewed.png" width="25" />
+      </div>
+      <ng-template #notViewd>
+        <img src="assets/images/notviewed.png" width="25" />
+      </ng-template>
+    </div>
+    To: <span class="bold-name">{{ message.team_b.team_name }}</span>
+  </div>
+  {{ message.message }}
+
+  <div class="options">
+    <img src="assets/images/msg.png" (click)="openChat()" width="25" />
+  </div>
+</div>
+
+<app-chat
+  [display]="displayOpenChat"
+  [teamChatId]="!from ? message.team_b.team_id : message.team_a.id"
+  [teamName]="!from ? message.team_b.team_name : message.team_a.team_name"
+  (closedDialog)="closeDialog()"
+></app-chat>

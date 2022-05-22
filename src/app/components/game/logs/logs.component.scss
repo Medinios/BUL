@@ -1,0 +1,11 @@
+.logs {
+  color: white;
+  max-height: 20vh;
+  height: 20vh;
+  background: #00000099;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+  padding: 1vh;
+}

@@ -19,6 +19,11 @@
       align-self: center;
     }
   }
+  .all {
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+  }
   .friend {
     padding: 1vh;
     background: #e91e63;

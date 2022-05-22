@@ -1,5 +1,5 @@
 <div class="next-game">
-  <div class="details">
+  <div class="details" *ngIf="upNext.date">
     <h1>Next Game</h1>
     <div class="time">{{ upNext.date }}</div>
     <div class="vs">

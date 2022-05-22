@@ -24,7 +24,14 @@ export class TeamComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.userService.getCurrentUser();
     this.selectedProducts = [];
+    this.getFiveOpen();
     this.getTeamData();
+  }
+
+  getFiveOpen() {
+    this.cardsService.get_opening_five().subscribe((res) => {
+      this.selectedProducts = res;
+    });
   }
 
   getTeamData() {
@@ -53,7 +60,7 @@ export class TeamComponent implements OnInit {
     console.log(product);
   }
   drop() {
-    if (this.draggedProduct) {
+    if (this.draggedProduct && this.selectedProducts.length < 5) {
       let draggedProductIndex = this.findIndex(this.draggedProduct);
       this.selectedProducts = [...this.selectedProducts, this.draggedProduct];
       this.availableProducts = this.availableProducts.filter(
@@ -62,7 +69,7 @@ export class TeamComponent implements OnInit {
       this.draggedProduct = null;
     }
     if (this.selectedProducts.length == 5) {
-      console.log('im 5 man');
+      this.saveFiveOpening();
     }
   }
 
@@ -72,5 +79,14 @@ export class TeamComponent implements OnInit {
   clear() {
     this.getTeamData();
     this.selectedProducts = [];
+  }
+
+  saveFiveOpening() {
+    this.selectedProducts;
+    this.cardsService
+      .set_five_opening(this.selectedProducts)
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 }

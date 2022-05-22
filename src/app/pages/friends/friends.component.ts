@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FriendsService } from 'src/app/services/friends.service';
 
 @Component({
@@ -8,6 +8,9 @@ import { FriendsService } from 'src/app/services/friends.service';
 })
 export class FriendsListComponent implements OnInit {
   friendList: any[] = [];
+  displayOpenChat: boolean = false;
+  teamChatId: number;
+  teamName: string;
   constructor(private friendsService: FriendsService) {}
 
   ngOnInit(): void {
@@ -26,5 +29,14 @@ export class FriendsListComponent implements OnInit {
     });
   }
 
-  sendMsg(friendId: number) {}
+  openChatWithFriend(teamId: number, teamName: string) {
+    this.displayOpenChat = true;
+    debugger;
+    this.teamChatId = teamId;
+    this.teamName = teamName;
+  }
+
+  closeDialog() {
+    this.displayOpenChat = false;
+  }
 }

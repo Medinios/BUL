@@ -1,0 +1,51 @@
+<p-dialog
+  [(visible)]="display"
+  [style]="{ width: '75vw' }"
+  [baseZIndex]="10000"
+  [closable]="false"
+>
+  <div class="chat">
+    <div class="chat-main">
+      <h1>
+        Send Message to: <span class="team-blue">{{ teamName }}</span>
+      </h1>
+      <form [formGroup]="chatForm" class="form">
+        <span class="p-float-label">
+          <input
+            id="float-input"
+            type="text"
+            formControlName="subject"
+            pInputText
+          />
+          <label for="float-input">Subject</label>
+        </span>
+        <span class="p-float-label">
+          <textarea
+            id="float-input"
+            rows="5"
+            cols="30"
+            pInputTextarea
+            formControlName="message"
+          ></textarea>
+
+          <label for="float-input">Message</label>
+        </span>
+        <div class="buttons">
+          <button
+            pButton
+            type="button"
+            label="Send"
+            (click)="onSubmit()"
+          ></button>
+          <button
+            pButton
+            type="button"
+            label="Close"
+            class="p-button-secondary"
+            (click)="closeDialog()"
+          ></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</p-dialog>

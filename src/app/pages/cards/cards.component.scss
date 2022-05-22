@@ -9,6 +9,7 @@
     max-width: 1006px;
     margin: 0 auto;
     &-list {
+      margin-bottom: 2vh;
       h1 {
         margin: unset;
         color: white;
@@ -20,4 +21,17 @@
       }
     }
   }
+  .data {
+    color: white;
+    .price {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.whatIGotCards {
+  display: flex;
+  gap: 2vh;
+  justify-content: center;
 }

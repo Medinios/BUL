@@ -1,0 +1,23 @@
+.chat {
+  &-main {
+    .team-blue {
+      color: var(--primary-link);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 3vh;
+      input,
+      textarea {
+        width: 80%;
+      }
+      .buttons {
+        display: flex;
+        gap: 2vh;
+        button {
+          width: 150px;
+        }
+      }
+    }
+  }
+}

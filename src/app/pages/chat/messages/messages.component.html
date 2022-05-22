@@ -1,0 +1,32 @@
+<div class="messages">
+  <div class="messages-content">
+    <app-header></app-header>
+    <div class="messages-content-list">
+      <h1>Your Messages</h1>
+    </div>
+
+    <p-tabView>
+      <p-tabPanel header="Messages">
+        <div class="msg">
+          <p-accordion *ngFor="let msg of msgUserGet">
+            <p-accordionTab
+              header="{{ msg.subject }}"
+              (click)="changeViewed(msg.id)"
+            >
+              <app-message [message]="msg"></app-message>
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Sent">
+        <div class="msg">
+          <p-accordion *ngFor="let msg of msgUserSent">
+            <p-accordionTab header="{{ msg.subject }}">
+              <app-message [message]="msg"></app-message>
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>

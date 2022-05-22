@@ -53,7 +53,7 @@ export class MainComponent implements OnInit {
   }
 
   getCards() {
-    this.cardsService.get_all_cards().subscribe((res) => {
+    this.cardsService.get_opening_five().subscribe((res) => {
       this.cards = res;
     });
   }
