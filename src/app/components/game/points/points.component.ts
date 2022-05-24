@@ -6,11 +6,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./points.component.scss'],
 })
 export class PointsComponent implements OnInit {
-  @Input() teams?: any;
+  @Input() homeTeam?: any;
+  @Input() awayTeam?: any;
   @Input() score: any;
+
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.score);
-  }
+  ngOnInit(): void {}
 }

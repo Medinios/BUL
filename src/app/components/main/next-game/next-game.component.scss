@@ -14,7 +14,15 @@
     position: absolute;
     left: 50%;
     width: 100%;
-    transform: translate(-50%, 0);
+    top: 10%;
+    transform: translate(-50%, -50%);
+    .vs {
+      position: absolute;
+      left: 50%;
+      width: 100%;
+      top: 30%;
+      transform: translate(-50%, -50%);
+    }
     .teams {
       display: flex;
       justify-content: space-between;
@@ -30,5 +38,17 @@
         }
       }
     }
+  }
+  h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

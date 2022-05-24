@@ -37,6 +37,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { GameComponent } from './pages/game/game.component';
 import { LogsComponent } from './components/game/logs/logs.component';
 import { PointsComponent } from './components/game/points/points.component';
+import { LeagueComponent } from './pages/league/league.component';
+import { GamesComponent } from './pages/games/games.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,8 @@ import { PointsComponent } from './components/game/points/points.component';
     GameComponent,
     LogsComponent,
     PointsComponent,
+    LeagueComponent,
+    GamesComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,7 @@ import { PointsComponent } from './components/game/points/points.component';
     InputTextareaModule,
     TabViewModule,
     AccordionModule,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [
     {

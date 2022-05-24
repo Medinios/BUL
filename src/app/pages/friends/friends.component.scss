@@ -8,11 +8,15 @@
   &-content {
     max-width: 1006px;
     margin: 0 auto;
+    h3 {
+      margin-top: 2vh;
+      color: white;
+    }
     &-list {
       h1 {
         margin: unset;
         color: white;
-        margin: unset;
+        margin-top: 2vh;
       }
       small {
         color: white;

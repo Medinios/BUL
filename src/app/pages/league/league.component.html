@@ -1,0 +1,27 @@
+<div class="league">
+  <div class="league-content">
+    <app-header></app-header>
+    <div class="league-content-list">
+      <h1>Your League</h1>
+      <div class="league-content-list-leg" *ngFor="let lea of league">
+        <div class="data">
+          <img src="{{ lea.team.logo }}" width="25" />
+          <div class="user">
+            <a href="/profile/{{ lea.team.user_id }}">{{
+              lea.team.team_name
+            }}</a>
+          </div>
+        </div>
+        <div class="stats">
+          <div class="win">
+            <img src="/assets/images/win.png" width="25" /> Wins: {{ lea.wins }}
+          </div>
+          <div class="loses">
+            <img src="/assets/images/lose.png" width="25" /> Loses:
+            {{ lea.losses }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

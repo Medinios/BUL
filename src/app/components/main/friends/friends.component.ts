@@ -15,7 +15,7 @@ export class FriendsComponent implements OnInit {
   }
 
   getFriends() {
-    this.friendsService.get_all_friends_by_team(2).subscribe((res) => {
+    this.friendsService.get_all_friends_by_team().subscribe((res) => {
       this.friendList = res;
     });
   }

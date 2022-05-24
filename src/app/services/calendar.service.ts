@@ -9,9 +9,9 @@ import { environment } from 'src/environments/environment';
 export class CalendarService {
   constructor(private httpClient: HttpClient) {}
 
-  get_todays_event_by_team_id(team_id: any): Observable<any> {
+  get_todays_event_by_team_id(): Observable<any> {
     return this.httpClient.get(
-      `${environment.base_url}calendar/get_todays_event_by_team_id/${team_id}`
+      `${environment.base_url}calendar/get_todays_event_by_team_id/`
     );
   }
 }

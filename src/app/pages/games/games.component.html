@@ -1,0 +1,32 @@
+<div class="games">
+  <div class="games-content">
+    <app-header></app-header>
+    <div class="games-content-list">
+      <h1>Games Requests:</h1>
+      <div class="games-list-cond" *ngIf="gameRequest?.length; else NotGames">
+        <div
+          class="games-content-list-friend"
+          *ngFor="let friend of gameRequest"
+        >
+          <div class="data">
+            <img src="{{ friend.team_a.logo }}" width="25" />
+            <div class="user">
+              <a href="/profile/{{ friend.team_a.user_id }}">{{
+                friend.team_a.team_name
+              }}</a>
+            </div>
+          </div>
+          <div class="options">
+            <img
+              src="assets/images/accept.png"
+              (click)="acceptGameRequest(friend.team_a.team_id)"
+            />
+          </div>
+        </div>
+      </div>
+      <ng-template #NotGames
+        ><h3>Sorry, but there is no Games request.</h3></ng-template
+      >
+    </div>
+  </div>
+</div>

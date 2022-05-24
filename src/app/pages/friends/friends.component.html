@@ -26,9 +26,36 @@
               openChatWithFriend(friend.team_b.team_id, friend.team_b.team_name)
             "
           />
-          <img src="assets/images/basketball.png" />
+          <img
+            src="assets/images/basketball.png"
+            (click)="inviteGame(friend.team_b.user_id)"
+          />
         </div>
       </div>
+      <h1>Friend Requests:</h1>
+      <div
+        class="friends-list-cond"
+        *ngIf="friendsRequest?.length; else NotFriends"
+      >
+        <div
+          class="friends-content-list-friend"
+          *ngFor="let friend of friendsRequest"
+        >
+          <div class="data">
+            <img src="{{ friend.team_b.logo }}" width="25" />
+            <div class="user">{{ friend.team_b.team_name }}</div>
+          </div>
+          <div class="options">
+            <img
+              src="assets/images/accept.png"
+              (click)="acceptFriendRequest(friend.team_a.team_id)"
+            />
+          </div>
+        </div>
+      </div>
+      <ng-template #NotFriends
+        ><h3>Sorry, but there is no friend request.</h3></ng-template
+      >
       <app-chat
         [display]="displayOpenChat"
         [teamChatId]="teamChatId"

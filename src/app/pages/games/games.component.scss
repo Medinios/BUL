@@ -1,32 +1,26 @@
-.profile {
-  background: linear-gradient(#000c, #000), url("/assets/images/profile.png");
+.games {
+  background: linear-gradient(#000c, #000), url("/assets/images/friendsBg.png");
   width: 100%;
   background-position: center;
   background-size: cover;
   min-height: 100vh;
   margin: unset;
   &-content {
+    a {
+      color: white;
+      text-decoration: none;
+    }
     max-width: 1006px;
     margin: 0 auto;
-
+    h3 {
+      margin-top: 2vh;
+      color: white;
+    }
     &-list {
-      &-top {
-        display: flex;
-        .data {
-          margin-left: 2vh;
-          .options {
-            display: flex;
-            gap: 1vh;
-            img {
-              cursor: pointer;
-            }
-          }
-        }
-      }
       h1 {
         margin: unset;
         color: white;
-        margin: unset;
+        margin-top: 2vh;
       }
       small {
         color: white;

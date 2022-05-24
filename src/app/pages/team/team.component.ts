@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnyForUntypedForms } from '@angular/forms';
 import { CardsService } from 'src/app/services/cards.service';
 import { UserService } from 'src/app/services/user.service';
-
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
@@ -86,7 +86,11 @@ export class TeamComponent implements OnInit {
     this.cardsService
       .set_five_opening(this.selectedProducts)
       .subscribe((res) => {
-        console.log(res);
+        Swal.fire(
+          'Set Five',
+          'You set your opening Five succesfully!',
+          'success'
+        );
       });
   }
 }

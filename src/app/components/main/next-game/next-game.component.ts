@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { GameService } from 'src/app/services/game.service';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-next-game',
   templateUrl: './next-game.component.html',
@@ -7,9 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NextGameComponent implements OnInit {
   @Input() upNext: any;
-  constructor() {}
+  constructor(private GameService: GameService, private router: Router) {}
 
-  ngOnInit(): void {
-    console.log(this.upNext);
+  ngOnInit(): void {}
+  startGame(home: string, away: string) {
+    Swal.fire('The Game is loading...');
+    this.GameService.startGame(home, away).subscribe((res) => {
+      this.router.navigate(['/game']);
+    });
   }
 }

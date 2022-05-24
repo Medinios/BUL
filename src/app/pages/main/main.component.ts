@@ -40,13 +40,12 @@ export class MainComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.user = this.userService.getCurrentUser();
     this.getNextEvent();
     this.getCards();
   }
 
   getNextEvent() {
-    this.calendarService.get_todays_event_by_team_id(2).subscribe((res) => {
+    this.calendarService.get_todays_event_by_team_id().subscribe((res) => {
       console.log(res);
       this.nextGame = res;
     });

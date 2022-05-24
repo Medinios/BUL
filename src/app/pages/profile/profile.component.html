@@ -1,1 +1,21 @@
-<p>profile works!</p>
+<div class="profile">
+  <div class="profile-content">
+    <app-header></app-header>
+    <div class="profile-content-list" *ngIf="teamProfile$ | async as team">
+      <div class="profile-content-list-top">
+        <div class="logo"><img src="{{ team.logo }}" width="150" /></div>
+        <div class="data">
+          <h1>{{ team.team_name }}</h1>
+          <div class="options">
+            <h1 (click)="addFriend(team.team_id)">
+              <img src="assets/images/add.png" width="30" />
+            </h1>
+            <h1 (click)="inviteGame()">
+              <img src="assets/images/basketball.png" width="30" />
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

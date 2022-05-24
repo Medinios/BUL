@@ -9,9 +9,9 @@ import { environment } from 'src/environments/environment';
 export class FriendsService {
   constructor(private httpClient: HttpClient) {}
 
-  get_all_friends_by_team(team_id: any): Observable<any> {
+  get_all_friends_by_team(): Observable<any> {
     return this.httpClient.get(
-      `${environment.base_url}friends/get_all_friends_by_user_team/${team_id}`
+      `${environment.base_url}friends/get_all_friends_by_user_team/`
     );
   }
 
@@ -47,6 +47,27 @@ export class FriendsService {
     return this.httpClient.post(
       `${environment.base_url}friends/update_msg_viewed/`,
       { chat_id: chat_id }
+    );
+  }
+
+  add_friend_request(team_id: string): Observable<any> {
+    return this.httpClient.post(`${environment.base_url}friends/add_friend/`, {
+      team_id: team_id,
+    });
+  }
+
+  accept_friend_request(team_id: string): Observable<any> {
+    return this.httpClient.post(
+      `${environment.base_url}friends/accept_friend_request/`,
+      {
+        team_id: team_id,
+      }
+    );
+  }
+
+  get_all_friend_requests(): Observable<any> {
+    return this.httpClient.get(
+      `${environment.base_url}friends/get_all_friend_requests/`
     );
   }
 }

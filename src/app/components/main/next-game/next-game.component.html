@@ -1,18 +1,17 @@
 <div class="next-game">
-  <div class="details" *ngIf="upNext.date">
-    <h1>Next Game</h1>
-    <div class="time">{{ upNext.date }}</div>
-    <div class="vs">
-      <h1>VS</h1>
+  <div class="details" *ngIf="upNext; else noNext">
+    <div class="next">
+      <h1>Next Game</h1>
+      <div class="time">{{ upNext.date }}</div>
     </div>
-    <div class="teams">
+    <div class="teams" *ngIf="upNext">
       <div class="team">
         <div class="image">
           <img src="{{ upNext.team_a.logo }}" />
         </div>
         <div class="name">{{ upNext.team_a.team_name }}</div>
       </div>
-      <div class="team">
+      <div class="team" *ngIf="upNext">
         <div class="image">
           <img src="{{ upNext.team_b.logo }}" />
         </div>
@@ -20,4 +19,25 @@
       </div>
     </div>
   </div>
+  <div class="vs" *ngIf="upNext">
+    <h1>VS</h1>
+  </div>
+  <button
+    pButton
+    type="button"
+    label="Start Game"
+    (click)="startGame(upNext.team_a.team_id, upNext.team_b.team_id)"
+    *ngIf="upNext"
+  ></button>
+  <ng-template #noNext>
+    <h1>
+      <p>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/889/889455.png"
+          width="50"
+        />
+      </p>
+      Not game was found , Invite for a game!
+    </h1>
+  </ng-template>
 </div>

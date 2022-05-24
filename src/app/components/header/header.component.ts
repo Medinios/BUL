@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,10 +8,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  user: any;
+  user$: Observable<any>;
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.user = this.userService.getCurrentUser();
+    console.log('shhhes');
+    this.user$ = this.userService.getUserFromDb();
   }
 }

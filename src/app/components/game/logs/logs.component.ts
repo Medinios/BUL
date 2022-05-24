@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { delay, repeatWhen } from 'rxjs';
 import { GameService } from 'src/app/services/game.service';
 
@@ -15,6 +15,8 @@ export class LogsComponent implements OnInit {
   dummyItems: any[] = [];
   @Output() score = new EventEmitter();
   @Output() gameOver = new EventEmitter();
+  @Input() date: any;
+  awayTeamId: string;
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
@@ -22,25 +24,29 @@ export class LogsComponent implements OnInit {
   }
 
   getLogs() {
-    this.gameService
-      .get_logs_for_game(this.logsNumber)
-      .pipe(repeatWhen((co) => co.pipe(delay(3000))))
-      .subscribe((res) => {
-        this.logs = res;
-        this.timer = setInterval(() => {
-          if (this.index < this.logs.length) {
-            this.searchForScore(this.logs[this.index], this.index);
+    this.gameService.get_logs_for_game(this.logsNumber).subscribe((res) => {
+      this.logs = res.logs;
+      this.awayTeamId = res.away_team.team_id;
+      this.timer = setInterval(() => {
+        if (this.index < this.logs.length) {
+          this.searchForScore(this.logs[this.index], this.index);
 
-            this.dummyItems.push(this.logs[this.index]);
+          this.dummyItems.push(this.logs[this.index]);
 
-            this.index++;
-          } else {
-            this.logsNumber = this.logs.length - 1;
-            clearInterval(this.timer);
-            this.gameOver.emit(this.logs[this.index]);
-          }
-        }, 4000);
-      });
+          this.index++;
+        } else {
+          this.logsNumber = this.logs.length - 1;
+          clearInterval(this.timer);
+          this.gameService.done_game().subscribe((res) => {});
+          this.gameOver.emit(this.logs[this.index]);
+        }
+      }, 4000);
+      this.gameService
+        .update_game_end(res.away_team.team_id, this.date)
+        .subscribe((res) => {
+          console.log(res);
+        });
+    });
   }
   searchForScore(line: any, index: number) {
     //score is : [2, 0]

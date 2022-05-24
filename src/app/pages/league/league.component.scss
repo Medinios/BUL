@@ -1,5 +1,6 @@
-.profile {
-  background: linear-gradient(#000c, #000), url("/assets/images/profile.png");
+.league {
+  background: linear-gradient(#000c, #000),
+    url("https://images.unsplash.com/photo-1602357280104-742c517a1d82?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1550");
   width: 100%;
   background-position: center;
   background-size: cover;
@@ -8,21 +9,7 @@
   &-content {
     max-width: 1006px;
     margin: 0 auto;
-
     &-list {
-      &-top {
-        display: flex;
-        .data {
-          margin-left: 2vh;
-          .options {
-            display: flex;
-            gap: 1vh;
-            img {
-              cursor: pointer;
-            }
-          }
-        }
-      }
       h1 {
         margin: unset;
         color: white;
@@ -32,7 +19,7 @@
         color: white;
         margin-bottom: 2vh;
       }
-      &-friend {
+      &-leg {
         margin-top: 2vh;
         padding: 1vh;
         background: #517293bd;
@@ -48,8 +35,12 @@
           .user {
             align-self: self-end;
           }
+          a {
+            color: white;
+            text-decoration: none;
+          }
         }
-        .options {
+        .stats {
           align-items: center;
           display: flex;
           gap: 0.5vh;

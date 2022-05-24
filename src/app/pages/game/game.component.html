@@ -3,11 +3,16 @@
     <app-header></app-header>
     <div class="game-content-list">
       <h1>Game Summary</h1>
-      <app-points [score]="points"></app-points>
+      <app-points
+        [score]="points"
+        [homeTeam]="homeTeam"
+        [awayTeam]="awayTeam"
+      ></app-points>
       <h3>Course Of The Game</h3>
       <app-logs
         (score)="score($event)"
         (gameOver)="gameOver($event)"
+        [date]="date"
       ></app-logs>
     </div>
   </div>
