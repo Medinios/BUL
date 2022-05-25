@@ -13,7 +13,7 @@
               header="{{ msg.subject }}"
               (click)="changeViewed(msg.id)"
             >
-              <app-message [message]="msg"></app-message>
+              <app-message [to]="true" [message]="msg"></app-message>
             </p-accordionTab>
           </p-accordion>
         </div>

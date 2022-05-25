@@ -14,7 +14,7 @@
         <img src="assets/images/notviewed.png" width="25" />
       </ng-template>
     </div>
-    To: <span class="bold-name">{{ message.team_b.team_name }}</span>
+    <span *ngIf="to">From:</span>  <span *ngIf="!to">To:</span> <span class="bold-name">{{ to ? message.team_a.team_name:message.team_b.team_name }}</span>
   </div>
   {{ message.message }}
 
@@ -25,7 +25,7 @@
 
 <app-chat
   [display]="displayOpenChat"
-  [teamChatId]="!from ? message.team_b.team_id : message.team_a.id"
-  [teamName]="!from ? message.team_b.team_name : message.team_a.team_name"
+  [teamChatId]="!to ? message.team_b.team_id : message.team_a.id"
+  [teamName]="!to ? message.team_b.team_name : message.team_a.team_name"
   (closedDialog)="closeDialog()"
 ></app-chat>

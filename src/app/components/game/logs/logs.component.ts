@@ -40,7 +40,7 @@ export class LogsComponent implements OnInit {
           this.gameService.done_game().subscribe((res) => {});
           this.gameOver.emit(this.logs[this.index]);
         }
-      }, 4000);
+      }, 1000);
       this.gameService
         .update_game_end(res.away_team.team_id, this.date)
         .subscribe((res) => {

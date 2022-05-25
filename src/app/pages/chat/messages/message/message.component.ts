@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
   @Input() message: any;
+  @Input() to?: boolean = false;
   @Input() from: boolean = false;
   displayOpenChat: boolean = false;
   constructor() {}

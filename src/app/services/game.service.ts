@@ -16,7 +16,6 @@ export class GameService {
   }
 
   update_game_end(team_id: string, date: string): Observable<any> {
-    debugger;
     return this.httpClient.post(
       `${environment.base_url}calendar/update_event_to_done/`,
       {
